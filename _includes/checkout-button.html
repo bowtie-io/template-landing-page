@@ -1,0 +1,56 @@
+<!-- include the Stripe checkout js and style reference in your head.html is using multiple products -->
+<script type="text/javascript" src="//checkout.stripe.com/checkout.js"></script>
+
+<div id="checkout">
+<a name="checkout"></a>
+  <button id="donate5" class="checkout-button btn btn-success">Donate $5.00</button>
+</div>
+
+<script>
+  bowtie.config.get(function(env){
+    if(!env.stripe.publishable_key){
+      console.error("Stripe not connected to this BowTie Project Environment");
+      return;
+    }
+
+    var handler = StripeCheckout.configure({
+      // Add your Stripe live publishable key here.
+      key: env.stripe.publishable_key,
+      image: '//stripe.com/img/documentation/checkout/marketplace.png',
+      locale: 'auto',
+      token: function(token) {
+        // Use the token to create the charge with a server-side script.
+        // You can access the token ID with `token.id`
+        bowtie.user.purchase('PRODUCTID', {
+          stripe_credit_card_token: token.id
+        }, function(charge){
+          // charge - https://stripe.com/docs/api#charge_object
+          if (charge.paid) {
+                 window.location.href = '/confirmation/thanks.html';
+             }
+        }, function(error){
+          // error.status = "fail" || "error"
+          // error.errors = { property: [message], ... }
+          console.log(error);
+        });
+      }
+    });
+
+    $('#donate5').on('click', function(e) {
+      // Open Checkout with further options
+      handler.open({
+        image: '/img/checkout-logo.png',
+        name: 'Sample Donation',
+        description: 'Explain your cause here.',
+        amount: 500
+      });
+      e.preventDefault();
+    });
+
+    // Close Checkout on page navigation
+    $(window).on('popstate', function() {
+      handler.close();
+    });
+  });
+
+</script>
