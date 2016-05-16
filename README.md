@@ -1,13 +1,14 @@
-# Landing Page + Blog Template
+# Simple Landers
 
-'Landing Page + Blog' is a single page site and blog template for Jekyll, designed for use on [BowTie.io](https://bowtie.io). This template is meant as a learning resource. It is compatible with other BowTie components and templates.
+'Simple Landers' is a collection of Jekyll landing pages for lead generation, designed for use on [BowTie.io](https://bowtie.io). This template is meant as a learning resource. It is compatible with other BowTie components and templates.
 
-This template includes panel-style components for product info, features, team members, a countdown timer, email collection using BowTie's prospect registration, pricing panels, testimonials, press logos. Other elements include post authorship, category sorting, [disqus](https://disqus.com/) commenting, [addthis](http://www.addthis.com/) social sharing, error pages, a maintenance page, terms of service generation, post archives, google maps, and user management and registration provided by BowTie.
+This template includes a number of simple landing pages with lead generation forms, a countdown timer, data collection using BowTie's prospect registration, testimonials, and a user card lander, error pages, a maintenance page, and user management and registration provided by BowTie.
+
+Content in this template is editable via the [BowTie Collection Editor](https://bowtie.io/help/working-with-jekyll-collections-bowtie/).
 
 The theme uses [jquery](https://jquery.com/), [bootstrap](http://getbootstrap.com/), [fontawesome](https://fortawesome.github.io/Font-Awesome/), and a custom theme styles written in [SCSS](http://sass-lang.com/).  
 
 ### [View Example Site](https://landingpage.bowtied.io/)
-
 
 ## Documentation
 This template is compatible with Jekyll 3.x. Jekyll will interpret liquid, markdown, and  standard HTML. For information on using Jekyll see the [Jekyll documentation](http://jekyllrb.com/). For thorough documentation of this template and the added BowTie features, view the [BowTie docs](https://bowtie.io/docs/#projects).

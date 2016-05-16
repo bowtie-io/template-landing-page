@@ -7,72 +7,100 @@
 /***** your custom styles ****/
 
 
-
 /***** fonts (use @import... to add custom webfonts) ****/
 
-$primary-font: null;
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,300,300italic|Lato:400,100,300,300italic,700,400italic);
+
+$primary-font: null; /** body, p **/
 $primary-font-weight: null;
 $primary-font-color: null;
 
-$secondary-font: null;
-$secondary-font-weight: null;
-$secondary-font-color: null;
+$heading-font: null; /** h1, h2, h3, h4, h5 **/
+$heading-font-weight: null;
+$heading-font-color: null;
 
-$header-font: null; /** h1, h2, h3, h4, h5 **/
-$header-font-weight: null;
-$header-font-color: null;
+$subheading-font: null; /** h3, h4, h5 **/ //should be subheading-heading-font
+$subheading-font-weight: null;
+$subheading-font-color: null;
 
 $link-color: null;
 $link-weight: null;
 $link-hover-color: null;
 $link-hover-weight: null;
 
-/***** colors and highlights ****/
-
-$section: null;
-$section-font-color: null;
-
-$section-alt: null;
-$section-alt-font-color: null;
-
-$section-color: null;
-$section-color-font-color: null;
-
-$section-black: null;
-$section-black-font-color: null;
-
-$footer: null;
-$footer-font-color: null;
-$footer-icon-color: null;
-$footer-link-color: null;
-$footer-link-hover-color: null;
-
 $nav: null;
 $nav-hover: null;
 $nav-font-color: null;
 $nav-hover-font-color: null;
 
+$footer: null;
+$footer-font-color: null;
+$footer-link-color: null;
+$footer-link-hover-color: null;
+$subfooter-font-color: null;
+$subfooter-link-color: null;
+$footer-icon-color: null;
+$footer-border: none;
+
+/***** section settings and colors ****/
+
+$section-padding: null;
+$content-container-bg: null;
+
+$section-font-color: null;
+$section-heading-font-color: null;
+$section-subheading-font-color: null;
+$section-link-color: null;
+$section-link-hover-color: null;
+$section-bg: null;
+
+$section-bgclear-font-color: #fff;
+$section-bgclear-heading-font-color: null;
+$section-bgclear-subheading-font-color: null;
+$section-bgclear-link-color: null;
+$section-bgclear-link-hover-color: null;
+
+$section-alt-font-color: null;
+$section-alt-subheading-font-color: null;
+$section-alt-heading-font-color: null;
+$section-alt-link-color: null;
+$section-alt-link-hover-color: null;
+$section-alt-bg: null;
+
+$section-dark-font-color: null;
+$section-dark-heading-font-color: null;
+$section-dark-subheading-font-color: null;
+$section-dark-link-color: null;
+$section-dark-link-hover-color: null;
+$section-dark-bg: null;
+
 /***** buttons ****/
 
+$btn-font-color: #fff;
+$radius: null;
 $default: null;
 $default-hover: null;
+$default-font-color: null;
 $info: null;
 $info-hover: null;
+$info-font-color: null;
 $success: null;
 $success-hover: null;
+$success-font-color: #fff;
 $warning: null;
 $warning-hover: null;
-$radius: null;
+$warning-font-color: null;
 
-/***** background images ****/
+/***** form styles ****/
 
-body {
- background-image:url(/img/backgrounds/bg2.jpg) !important;
-}
+$form-headline-color: null;
+$form-background-color: null;
+$form-border: null;
+$form-box-shadow: null;
 
-#team {
- background-image:url(/img/backgrounds/bg2.jpg) !important;
-}
+$mediatint-color: #65c4dc;
+$bgoverlayDark: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9));
+$bgoverlayLight: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.9));
 
 /***** theme variables below this line ****/
 
@@ -87,16 +115,16 @@ a:hover, a:focus {
 }
 
 h1,h2,h3,h4,h5 {
-  font-weight: $header-font-weight;
-  font-family: $header-font, "Helvetica", sans-serif;
-  color: $header-font-color !important;
+  font-weight: $heading-font-weight;
+  font-family: $heading-font, "Helvetica", sans-serif;
+  color: $heading-font-color !important;
 }
 
 h3, h4 {
   align-content: center;
   text-transform: none;
-  font-family: $secondary-font !important;
-  color: $secondary-font-color !important;
+  font-family: $subheading-font !important;
+  color: $subheading-font-color !important;
 }
 
 body, p {
@@ -105,37 +133,44 @@ font-weight:$primary-font-weight !important;
 color:$primary-font-color !important;
 }
 
-.section {
-  background-color: $section;
-  h1, h2, h3 {
-    color:$section-font-color !important;
-  }
+/// new section overrides
+
+section {
+  background-color: $section-bg;
+  padding: $section-padding !important;
+  body, p, li, ul, h1, h2, h3, h4, h5 { color:$section-font-color !important;}
+  h1, h2 { color:$section-heading-font-color !important;}
+  h3, h4, h5 { color:$section-subheading-font-color !important;}
 }
-.section.alt {
-  background-color: $section-alt;
-  h1, h2, h3 {
-    color:$section-alt-font-color !important;
-  }
+section.alt {
+  background-color: $section-alt-bg;
+  body, p, li, ul, h1, h2, h3, h4, h5 { color:$section-alt-font-color !important;}
+  h1, h2 { color:$section-alt-heading-font-color !important;}
+  h3, h4, h5 { color:$section-alt-subheading-font-color !important;}
 }
 
-.section.color {
-  background-color: $section-color !important;
-  h1, h2, h3 { color:$section-color-font-color !important;
-  }
+section.dark {
+  background-color: $section-dark-bg;
+  body, p, li, ul, h1, h2, h3, h4, h5 { color:$section-dark-font-color !important;}
+  h1, h2 { color:$section-dark-heading-font-color !important;}
+  h3, h4, h5 { color:$section-dark-subheading-font-color !important;}
 }
 
-.section.black {
-  background-color: $section-black !important;
-  h1, h2, h3 { color:$section-black-font-color !important;
-  }
+section.bgclear {
+  background-color: transparent !important;
+  body, p, li, ul, h1, h2, h3, h4, h5 { color:$section-bgclear-font-color !important;}
+  h1, h2 { color:$section-bgclear-heading-font-color !important;}
+  h3, h4, h5 { color:$section-bgclear-subheading-font-color !important;}
 }
+
+.bgclear {background-color: transparent !important;}
+
 
 #footer {
   background-color:$footer;
   color:$footer-font-color;
-  .subfooter {
-    color:$footer-font-color;
-    }
+  border-top: $footer-border !important;
+  margin-top:-1px;
   a, a:visited, a:hover, a:active {
     color:$footer-link-color !important;
     }
@@ -145,6 +180,13 @@ color:$primary-font-color !important;
   i {
     color:$footer-icon-color;}
 }
+
+.subfooter {
+  color:$subfooter-font-color !important;
+  a, a:visited, a:hover, a:active {
+    color:$subfooter-link-color !important;
+    }
+  }
 
 #nav.navbar {
   background-color:$nav;
@@ -159,41 +201,141 @@ background-color:$nav-hover;
 color:$nav-hover-font-color !important;
 }
 
-.btn-default {
+
+.btn, .btn-sm, .btn-lg, .btn-xs {
+  border-radius:$radius !important;
+}
+
+.btn, a .btn, .btn:hover, .btn:active, .btn:focus {
+color: $btn-font-color !important;
+}
+
+.btn-default, a .btn-default {
+  color:$default-font-color !important;
   background-color:$default;
   border-color:$default;
 }
 
-.btn-default:hover,.btn-default:active  {
+.btn-default:hover,.btn-default:active,.btn-default:focus,  {
   background-color:$default-hover;
   border-color:$default-hover;
 }
 
-.btn-info {
+.btn-info, a .btn-info {
+  color:$info-font-color !important;
   background-color:$info;
   border-color:$info;
 }
-.btn-info:hover,.btn-info:active  {
+
+.btn-info:hover,.btn-info:active,.btn-info:focus  {
   background-color:$info-hover;
   border-color:$info-hover;
 }
 
-.btn-warning {
+.btn-warning, a .btn-warning {
+  color:$warning-font-color !important;
   background-color:$warning;
-  border-color:$warning;
+  border: 2px solid $warning-hover;
 }
 
-.btn-warning:hover,.btn-warning:active  {
+.btn-warning:hover,.btn-warning:active,.btn-warning:focus  {
+  color:$warning-font-color !important;
   background-color:$warning-hover;
   border-color:$warning-hover;
 }
 
-.btn-success {
+.btn-success, a .btn-success {
+  color:$success-font-color !important;
   background-color:$success;
   border-color:$success;
 }
 
-.btn-success:hover,.btn-success:active  {
+.btn-success:hover,.btn-success:active,.btn-success:focus,.btn-success:visited  {
   background-color:$success-hover;
   border-color:$success-hover;
+}
+
+
+#content{
+  #hero {
+  .action.form {
+    h2 {
+      color: $form-headline-color !important;
+      }
+    .email-form {
+      background: $form-background-color !important;
+      border: $form-border;
+      box-shadow: $form-box-shadow  !important;
+      }
+    }
+  }
+}
+
+.media-wrap {
+  .media-tint, .video-placeholder {
+    background: $mediatint-color;
+    }
+  .media.bgoverlayLight:after, .slider-bgimg.bgoverlayLight:after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: $bgoverlayLight;
+    }
+    .media.bgoverlayDark:after, .slider-bgimg.bgoverlayDark:after {
+      content: '';
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: $bgoverlayDark;
+    }
+  }
+
+.slider-bgimg.bgoverlayLight:after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $bgoverlayLight;
+  }
+  .slider-bgimg.bgoverlayDark:after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: $bgoverlayDark;
+  }
+
+  .content-container {
+    section:nth-child(1) {
+      padding: $section-padding;
+      section:first-of-type {
+        margin: $section-padding;
+      }
+      section:nth-child(2) {
+        margin-top:-60px;
+        margin-bottom: 60px;
+      }
+    }
+    section > section:last-of-type {
+      margin-bottom:-60px;
+    }
+  }
+
+.stripe-button {
+  margin:0 auto;
+  text-align:center;
+  small {float: none;}
 }

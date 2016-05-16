@@ -1,0 +1,45 @@
+---
+layout: "landing"
+---
+<section id="hero" class="lander jumbotron {%if page.style.sectioncolor %}{{page.style.sectioncolor}}{% endif %}">
+ {% include section-background.html %}
+
+  <div class="container">
+    <div class="align-elements">
+      <div class="element {{page.element.type}} {% if page.action.type == 'none' %}col-sm-12{% else %} col-sm-6{% endif %}">
+        {% if page.element.type == 'image' %}
+         {%include elements/image.html %}
+
+        {% elsif page.element.type == 'pitch' %}
+          {%include elements/pitch.html %}
+
+        {% elsif page.element.type == 'card' %}
+          {%include elements/card.html %}
+
+        {% elsif page.element.type == 'testimonial' %}
+          {%include elements/testimonial.html %}
+
+        {% elsif page.element.type == 'countdown'%}
+          {%include elements/countdown.html %}
+
+        {% endif %}
+      </div>
+
+      <div class="action {{page.action.type}} {% if page.element.type == 'none' %}col-sm-8 col-sm-offset-2{% else %} col-sm-6{% endif %}">
+
+        {% if page.action.type == 'form' %}
+          {% include elements/email-capture-form.html %}
+
+        {% elsif page.action.type == 'popupform' %}
+          {% include elements/email-popup-form.html %}
+
+        {% elsif page.action.type == 'cta' %}
+          {% include elements/cta.html %}
+
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="content-container">{{content}}</div>
