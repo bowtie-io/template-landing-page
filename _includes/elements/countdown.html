@@ -3,10 +3,10 @@
 
 <h1 class="headline">{{page.element.headline}}</h1>
 <div class="count-down pull-center" id="count-down" data-countdown="{{ page.element.countdown.date }}" data-countdown-hide-oncomplete="{% if page.element.countdown.complete %}true{% else %}false{% endif %}">
-  <span class="count"><span class="count-wrap"><span class="digits" id="days"></span> Days</span> </span>
-  <span class="count"><span class="count-wrap"><span class="digits" id="hours"></span> Hours</span> </span>
-  <span class="count"><span class="count-wrap"><span class="digits" id="minutes"></span> Mins</span> </span>
-  <span class="count"><span class="count-wrap"><span class="digits" id="seconds"></span> Secs</span></span>
+  <span class="count hideexpired"><span class="count-wrap"><span class="digits" id="days"></span> Days</span> </span>
+  <span class="count hideexpired"><span class="count-wrap"><span class="digits" id="hours"></span> Hours</span> </span>
+  <span class="count hideexpired"><span class="count-wrap"><span class="digits" id="minutes"></span> Mins</span> </span>
+  <span class="count hideexpired"><span class="count-wrap"><span class="digits" id="seconds"></span> Secs</span></span>
   <div class="count-down-complete">
     <h2>{{page.element.countdown.complete}}</h2>
   </div>
