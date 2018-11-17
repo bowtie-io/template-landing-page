@@ -1,20 +1,21 @@
 ---
-location: 'simple-countdown'
+location: simple-countdown
 head:
   title: ''
-  subtitle: 'Build any of these example landers without writing code. <a href="https://bowtie.io/owners/sign_up" target="_blank" >Log in </a>to start.'
+  subtitle: Subtitle
 style:
-  id: 'examples'
-  class:
-  background_color:  
+  id: examples
+  class: null
+  background_color: null
 cta:
-  headline:
-  btnText:
-  btnType:
-  btnLink:
-  subtext:
+  headline: null
+  btnText: null
+  btnType: null
+  btnLink: null
+  subtext: null
 
 ---
+
 &nbsp;
 
 <div class="row">
@@ -71,3 +72,4 @@ cta:
 <h6 class="text-center text-muted"><em>Want to remove this section? Delete '{% include section.html location="simple-countdown" %}
 ' from the Simple Countdown lander.</em></h6>
 </div>
+
