@@ -2,7 +2,7 @@
 location: simple-countdown
 head:
   title: ''
-  subtitle: Subtitle
+  subtitle: stuff and things
 style:
   id: examples
   class: null
@@ -15,6 +15,7 @@ cta:
   subtext: null
 
 ---
+
 
 &nbsp;
 
@@ -72,4 +73,5 @@ cta:
 <h6 class="text-center text-muted"><em>Want to remove this section? Delete '{% include section.html location="simple-countdown" %}
 ' from the Simple Countdown lander.</em></h6>
 </div>
+
 
